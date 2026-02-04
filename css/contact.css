@@ -1,0 +1,99 @@
+body {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 80px;
+}
+
+/* NAVBAR */
+.simple-nav {
+  background: #111;
+  padding: 15px 0;
+  z-index: 9999;
+}
+
+.simple-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.simple-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+}
+
+
+/* HERO */
+.contact-hero {
+  height: 50vh;
+  background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.contact-hero .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* GLASS CARD */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* FORM */
+.form-control {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+}
+
+.form-control::placeholder {
+  color: #ccc;
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 40vh;
+  }
+}

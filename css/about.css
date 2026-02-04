@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding-top: 80px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #a16868;
+}
+
+/* Navbar */
+.simple-nav {
+  background: #111;
+  padding: 15px 0;
+  z-index: 9999;
+}
+
+.simple-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.simple-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+}
+
+/* Hero Section */
+.about-hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1601924638867-3ec62f0b2b45") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.about-hero .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass Card (tera diya hua improved) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+}
