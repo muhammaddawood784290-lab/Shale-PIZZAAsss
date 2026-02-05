@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-  // Scroll reveal animation
   function revealOnScroll() {
     $(".reveal").each(function () {
       let windowHeight = $(window).height();
@@ -16,7 +15,6 @@ $(document).ready(function () {
   $(window).on("scroll", revealOnScroll);
   revealOnScroll();
 
-  // Order button demo
   $(".btn-danger").click(function () {
     alert("Online ordering coming soon 🍕");
   });

@@ -17,15 +17,73 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 1.5s ease forwards;
-  animation-delay: 2.5s;
+  animation: fadeOut 1.2s ease forwards;
+  animation-delay: 2.2s;
 }
 
 #welcomeScreen h1 {
   font-size: 3rem;
-  animation: zoomIn 2s ease;
+  animation: zoomIn 1.5s ease;
 }
 
+/* ===== Hero ===== */
+.hero-section {
+  background: url("../images/hero.jpg") center/cover no-repeat;
+  height: 90vh;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.65);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 80px 0;
+}
+
+/* ===== Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Cards ===== */
+.card {
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== Button ===== */
+.btn-danger {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(220,53,69,0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(220,53,69,0); }
+  100% { box-shadow: 0 0 0 0 rgba(220,53,69,0); }
+}
+
+/* ===== Animations ===== */
 @keyframes zoomIn {
   from { transform: scale(0.3); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -35,80 +93,8 @@ body {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* ===== Hero ===== */
-.hero-section {
-  background: url("../images/hero.jpg") center/cover no-repeat;
-  height: 90vh;
-  position: relative;
-}
-
-.hero-overlay {
-  background: rgba(0,0,0,0.6);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-  animation: slideDown 1.2s ease;
-}
-
-.hero-section p {
-  font-size: 1.2rem;
-  animation: fadeUp 1.5s ease;
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* ===== Scroll Reveal ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Cards Hover ===== */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* ===== Button Pulse ===== */
-.btn-danger {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(220,53,69,0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(220,53,69,0); }
-  100% { box-shadow: 0 0 0 0 rgba(220,53,69,0); }
-}
-
-/* ===== Media Query ===== */
+/* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-  #welcomeScreen h1 {
-    font-size: 2rem;
-  }
+  .hero-section h1 { font-size: 2rem; }
+  #welcomeScreen h1 { font-size: 1.8rem; }
 }
