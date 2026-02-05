@@ -15,8 +15,4 @@ $(document).ready(function () {
   $(window).on("scroll", revealOnScroll);
   revealOnScroll();
 
-  $(".btn-danger").click(function () {
-    alert("Online ordering coming soon 🍕");
-  });
-
 });

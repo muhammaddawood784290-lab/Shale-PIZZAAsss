@@ -1,56 +1,107 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  margin-top: 70px;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 80px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #ddd;
 }
 
-/* ===== Welcome Screen ===== */
-#welcomeScreen {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  color: #fff;
+/* Navbar */
+.simple-nav {
+  background: #111;
+  padding: 15px 0;
   z-index: 9999;
+}
+
+.simple-nav .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  animation: fadeOut 1.2s ease forwards;
-  animation-delay: 2.2s;
 }
 
-#welcomeScreen h1 {
-  font-size: 3rem;
-  animation: zoomIn 1.5s ease;
+.simple-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-/* ===== Hero ===== */
-.hero-section {
-  background: url("../images/hero.jpg") center/cover no-repeat;
-  height: 90vh;
-}
-
-.hero-overlay {
-  background: rgba(0,0,0,0.65);
-  height: 100%;
+.nav-links {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 25px;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
   color: #fff;
 }
 
-.hero-section h1 {
-  font-size: 3rem;
+/* Hero */
+.home-hero {
+  height: 100vh;
+  background: url("../images/hero.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ===== Sections ===== */
+.home-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.home-hero .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sections */
 .section {
   padding: 80px 0;
 }
 
-/* ===== Reveal ===== */
+/* Glass Card */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -62,39 +113,14 @@ body {
   transform: translateY(0);
 }
 
-/* ===== Cards ===== */
-.card {
-  transition: 0.3s ease;
+/* Footer */
+footer {
+  background: #000;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* ===== Button ===== */
-.btn-danger {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(220,53,69,0.7); }
-  70% { box-shadow: 0 0 0 18px rgba(220,53,69,0); }
-  100% { box-shadow: 0 0 0 0 rgba(220,53,69,0); }
-}
-
-/* ===== Animations ===== */
-@keyframes zoomIn {
-  from { transform: scale(0.3); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* ===== Mobile ===== */
+/* Mobile */
 @media (max-width: 768px) {
-  .hero-section h1 { font-size: 2rem; }
-  #welcomeScreen h1 { font-size: 1.8rem; }
+  .home-hero h1 {
+    font-size: 2.2rem;
+  }
 }
