@@ -76,19 +76,67 @@ body {
 }
 
 /* FORM */
-.form-control {
-  background: rgba(255,255,255,0.1);
+
+.contact-form-box {
+  max-width: 520px;
+  width: 100%;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start; /* 🔥 ye important */
+}
+
+/* Contact form inputs */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 16px;
+  border-radius: 16px;
   border: none;
+  outline: none;
+  background: #333;
   color: #fff;
+  box-sizing: border-box;
 }
 
-.form-control::placeholder {
-  color: #ccc;
+/* textarea height */
+#contactForm textarea {
+  min-height: 140px;
+  max-height: 180px;
+  resize: none;
 }
 
-.form-control:focus {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
+/* button height thori compact */
+#contactForm button {
+  height: 50px;
+  font-size: 16px;
+}
+
+/* Placeholder color */
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #aaa;
+}
+
+/* Input Height fix */
+#contactForm input{
+  height: 56px;
+}
+
+/* Focus effect */
+#contactForm input:focus,
+#contactForm textarea:focus {
+  background: #3a3a3a;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
 }
 
 /* RESPONSIVE */
