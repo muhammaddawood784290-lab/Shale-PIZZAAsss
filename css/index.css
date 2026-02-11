@@ -6,6 +6,17 @@ body {
   color: #ddd;
 }
 
+/*Barba Page Transition*/
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  transform: scaleY(0);
+  transform-origin: top;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 /* Navbar */
 .simple-nav {
   background: #111;

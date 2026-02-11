@@ -12,6 +12,14 @@
 </head>
 <body>
 
+  <!--Brba.js -->
+<div data-barba="wrapper">
+  <div class="page-transition"></div>
+    <div data-barba="container" data-barba-namespace="Home">
+      <!-- page content -->
+    </div>
+</div>
+
 <!-- ===== Navbar ===== -->
 <nav class="navbar fixed-top simple-nav">
   <div class="container">
@@ -75,6 +83,13 @@
   </div>
 </section>
 
+<!--Barba.js-->
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="your-barba-init.js"></script>
+
+<!--GSAP Cdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <!-- ===== Footer ===== -->
 <footer class="text-center py-4 text-light">
   © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
@@ -85,6 +100,9 @@
 
 <!-- Custom JS -->
 <script src="../js/index.js"></script>
+
+<!--Barba Transition Js-->
+<script src="../js/barba-init.js"></script>
 
 </body>
 </html>
