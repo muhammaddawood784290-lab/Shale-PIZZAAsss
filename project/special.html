@@ -10,84 +10,87 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/special.css">
 </head>
-<body>
 
-  <!--Barba JS-->
-  <body data-barba="wrapper">
-
-  <div class="page-transition"></div>
+ <!--Barba JS-->
+<body data-barba="wrapper">
+  
+  <!-- NAVBAR (SAME EVERYWHERE) -->
+  <nav class="glass-nav fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+  
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="../Assets/Shalezz Pizza logo.jpg" >
+        <span>Shale-<strong>PIZZAAsss</strong></span>
+      </a>
+  
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="special.html">Special</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+  
+    </div>
+  </nav>
 
   <div data-barba="container" data-barba-namespace="home">
     <!-- page content yahan aayega -->
-  </div>
-  </body>
-
-<!-- NAVBAR (SAME EVERYWHERE) -->
-<nav class="glass-nav fixed-top">
-  <div class="container d-flex justify-content-between align-items-center">
-
-    <!-- Logo -->
-    <a href="index.html" class="logo">
-      <img src="../Assets/Shalezz Pizza logo.jpg" alt="Shale-PIZZAAsss Logo">
-      <span>Shale-<strong>PIZZAAsss</strong></span>
-    </a>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="special.html">Special</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="special-hero">
-  <div class="overlay"></div>
-  <div class="content text-center">
-    <h1 class="fade-up">🔥 Special Pizza Deals</h1>
-    <p class="fade-up delay-1">Limited time offers you can’t resist</p>
-  </div>
-</section>
-
-<!-- DEALS -->
-<section class="deals container py-5">
-  <div class="row g-4">
-
-    <div class="col-md-4">
-      <div class="glass-card fade-up">
-        <h3>Family Combo</h3>
-        <p>2 Large Pizzas + Garlic Bread</p>
-        <span class="price">Rs. 2499</span>
+    
+    
+    <!-- HERO -->
+    <section class="special-hero">
+      <div class="overlay"></div>
+      <div class="content text-center">
+        <h1 class="fade-up">🔥 Special Pizza Deals</h1>
+        <p class="fade-up delay-1">Limited time offers you can’t resist</p>
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="glass-card fade-up delay-1">
-        <h3>Buy 1 Get 1</h3>
-        <p>Medium Pizza (Any Flavor)</p>
-        <span class="price">Rs. 1599</span>
+    </section>
+    
+    <!-- DEALS -->
+    <section class="deals container py-5">
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="glass-card fade-up">
+            <h3>Family Combo</h3>
+            <p>2 Large Pizzas + Garlic Bread</p>
+            <span class="price">Rs. 2499</span>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="glass-card fade-up delay-1">
+            <h3>Buy 1 Get 1</h3>
+            <p>Medium Pizza (Any Flavor)</p>
+            <span class="price">Rs. 1599</span>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="glass-card fade-up delay-2">
+            <h3>Pasta Special</h3>
+            <p>Creamy Alfredo + Drink</p>
+            <span class="price">Rs. 999</span>
+          </div>
+        </div>
+        
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="glass-card fade-up delay-2">
-        <h3>Pasta Special</h3>
-        <p>Creamy Alfredo + Drink</p>
-        <span class="price">Rs. 999</span>
-      </div>
-    </div>
-
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta text-center">
+      <h2>🍕 Hungry? Order Now!</h2>
+      <a href="contact.html" class="btn btn-danger mt-3">Call to Order</a>
+    </section>
+    
   </div>
-</section>
 
-<!-- CTA -->
-<section class="cta text-center">
-  <h2>🍕 Hungry? Order Now!</h2>
-  <a href="contact.html" class="btn btn-danger mt-3">Call to Order</a>
-</section>
+<!-- ===== Footer ===== -->
+<footer class="text-center py-4 text-light">
+  © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
+</footer>
 
 <!--Barba.js-->
 <script src="https://unpkg.com/@barba/core"></script>
