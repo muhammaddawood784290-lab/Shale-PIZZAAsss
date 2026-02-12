@@ -6,22 +6,34 @@ body {
 }
 
 /* NAVBAR */
-.simple-nav {
-  background: #111;
-  padding: 15px 0;
-  z-index: 9999;
+.glass-nav {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
 }
 
-.simple-nav .container {
+.logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.simple-nav .navbar-brand {
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
   color: #fff;
-  font-weight: 700;
-  text-decoration: none;
+}
+
+.logo strong {
+  color: #E63946;
 }
 
 .nav-links {
@@ -29,21 +41,19 @@ body {
   display: flex;
   gap: 25px;
   margin: 0;
-  padding: 0;
 }
 
-.nav-links li a {
-  color: #ccc;
+.nav-links a {
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
   color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
+.nav-links a:hover,
+.nav-links a.active {
+  color: #E63946;
+}
 
 /* HERO */
 .contact-hero {

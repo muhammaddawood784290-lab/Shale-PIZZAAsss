@@ -8,14 +8,33 @@ body {
 
 /* NAVBAR */
 .glass-nav {
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(12px);
-  height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo strong {
+  color: #E63946;
 }
 
 .nav-links {
@@ -25,17 +44,16 @@ body {
   margin: 0;
 }
 
-.nav-links li a {
+.nav-links a {
   text-decoration: none;
   color: #fff;
-  opacity: 0.8;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  opacity: 1;
-  color: #ff4d4d;
+.nav-links a:hover,
+.nav-links a.active {
+  color: #E63946;
 }
 
 /* HERO */

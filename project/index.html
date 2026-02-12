@@ -12,27 +12,37 @@
 </head>
 <body>
 
-  <!--Brba.js -->
-<div data-barba="wrapper">
+  <!--Barba JS-->
+  <body data-barba="wrapper">
+
   <div class="page-transition"></div>
-    <div data-barba="container" data-barba-namespace="Home">
-      <!-- page content -->
-    </div>
-</div>
 
-<!-- ===== Navbar ===== -->
-<nav class="navbar fixed-top simple-nav">
-  <div class="container">
-    <a class="navbar-brand" href="../project/index.html">🍕 Shale-PIZZAAsss</a>
+  <div data-barba="container" data-barba-namespace="home">
+    <!-- page content yahan aayega -->
+  </div>
+  </body>
 
+<!-- NAVBAR (SAME EVERYWHERE) -->
+<nav class="glass-nav fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../Assets/Shalezz Pizza logo.jpg" alt="Shale-PIZZAAsss Logo">
+      <span>Shale-<strong>PIZZAAsss</strong></span>
+    </a>
+
+    <!-- Navigation Links -->
     <ul class="nav-links">
-      <li><a class="active" href="../project/index.html">Home</a></li>
-      <li><a href="../project/about.html">About</a></li>
-      <li><a href="../project/special.html">Specials</a></li>
-      <li><a href="../project/contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="special.html">Special</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </div>
 </nav>
+
 
 <!-- ===== Hero ===== -->
 <section class="home-hero">
@@ -83,17 +93,17 @@
   </div>
 </section>
 
-<!--Barba.js-->
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="your-barba-init.js"></script>
-
-<!--GSAP Cdn-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
 <!-- ===== Footer ===== -->
 <footer class="text-center py-4 text-light">
   © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
 </footer>
+
+<!--Barba.js-->
+<script src="https://unpkg.com/@barba/core"></script>
+
+<!--GSAP Cdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

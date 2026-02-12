@@ -12,24 +12,34 @@
 </head>
 <body>
 
-  <!--Brba.js -->
-<div data-barba="wrapper">
-  <div class="page-transition"></div>
-    <div data-barba="container" data-barba-namespace="Special">
-      <!-- page content -->
-    </div>
-</div>
+  <!--Barba JS-->
+  <body data-barba="wrapper">
 
-<!-- NAVBAR -->
+  <div class="page-transition"></div>
+
+  <div data-barba="container" data-barba-namespace="home">
+    <!-- page content yahan aayega -->
+  </div>
+  </body>
+
+<!-- NAVBAR (SAME EVERYWHERE) -->
 <nav class="glass-nav fixed-top">
-  <div class="container d-flex align-items-center justify-content-between">
-    <div class="logo">🍕 Shale-PIZZAAsss</div>
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../Assets/Shalezz Pizza logo.jpg" alt="Shale-PIZZAAsss Logo">
+      <span>Shale-<strong>PIZZAAsss</strong></span>
+    </a>
+
+    <!-- Navigation Links -->
     <ul class="nav-links">
-      <li><a href="../project/index.html">Home</a></li>
-      <li><a href="../project/about.html">About</a></li>
-      <li><a href="../project/special.html" class="active">Special</a></li>
-      <li><a href="../project/contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="special.html">Special</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </div>
 </nav>
 
@@ -76,12 +86,14 @@
 <!-- CTA -->
 <section class="cta text-center">
   <h2>🍕 Hungry? Order Now!</h2>
-  <a href="../project/contact.html" class="btn btn-danger mt-3">Call to Order</a>
+  <a href="contact.html" class="btn btn-danger mt-3">Call to Order</a>
 </section>
 
 <!--Barba.js-->
 <script src="https://unpkg.com/@barba/core"></script>
-<script src="your-barba-init.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!--GSAP Cdn-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
