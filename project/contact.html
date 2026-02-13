@@ -35,59 +35,56 @@
     </div>
   </nav>
 
-  <div data-barba="container" data-barba-namespace="home">
-    <!-- page content yahan aayega -->
-    
-    <section class="contact-section py-5">
-      <div class="container">
-        <div class="row">
-          <!-- HERO -->
-          <section class="contact-hero">
-            <div class="overlay"></div>
-            <div class="content text-center">
-              <h1>Contact Us</h1>
-              <p>We’d love to hear from you 🍕</p>
-            </div>
-          </section>
-          
-          <!-- CONTACT SECTION -->
-          <section class="container py-5">
-            <div class="row g-4">
-              
-              <!-- FORM -->
-              <div class="contact-form-box">
-                <form id="contactForm">
-                  <input type="text" id="name" placeholder="Your Name" autocomplete="off"/>
-                  <input type="email" id="email" placeholder="Email Address" autocomplete="off"/>
-                  <textarea id="message" placeholder="Your Message"></textarea>
-                  
-                  <button type="submit" class="btn btn-warning w-100">
-                    Send Message
-                  </button>
-                </form>
-              </div>
-              
-              <!-- INFO -->
-              <div class="col-md-5">
-                <div class="glass-card p-4">
-                  <h3>Get in touch</h3>
-                  <p>📍 Worldwide – 1000+ Locations</p>
-                  <p>📞 +92 300 1234567</p>
-                  <p>✉️ contact@shalepizza.com</p>
-                  
-                  <a href="tel:+923001234567" class="btn btn-danger w-100 mt-3">
-                    📞 Call to Order
-                  </a>
-                </div>
-              </div>
-              
-            </div>
-          </section>
-          
-        </div>      
+  <div data-barba="container" data-barba-namespace="contact">
+
+  <!-- HERO -->
+  <section class="contact-hero text-center py-5">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you 🍕</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN SECTION -->
+  <section class="contact-section py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- FORM COLUMN -->
+        <div class="col-lg-7">
+          <div class="contact-form-box p-4">
+            <form id="contactForm">
+              <input type="text" id="name" class="form-control mb-3" placeholder="Your Name" autocomplete="off"/>
+              <input type="email" id="email" class="form-control mb-3" placeholder="Email Address" autocomplete="off"/>
+              <textarea id="message" class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+
+              <button type="submit" class="btn btn-warning w-100">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO COLUMN -->
+        <div class="col-lg-5">
+          <div class="glass-card p-4 h-100">
+            <h3>Get in touch</h3>
+            <p>📍 Worldwide – 1000+ Locations</p>
+            <p>📞 +92 300 1234567</p>
+            <p>✉️ contact@shalepizza.com</p>
+
+            <a href="tel:+923001234567" class="btn btn-danger w-100 mt-3">
+              📞 Call to Order
+            </a>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+</div>
+
 
 <!-- ===== Footer ===== -->
 <footer class="text-center py-4 text-light">
