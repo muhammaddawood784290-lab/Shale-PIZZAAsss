@@ -14,6 +14,14 @@
 
 <body data-barba="wrapper">
 
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div class="page-transition-overlay">
+    <div class="transition-modal">
+      <h1 class="page-name">Special</h1>
+      <p class="page-loading">Loading...</p>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="glass-nav fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
@@ -37,41 +45,157 @@
 
     <!-- HERO -->
     <section class="special-hero text-center py-5">
-      <div class="container">
-        <h1>🔥 Special Pizza Deals</h1>
-        <p>Limited time offers you can’t resist</p>
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">🔥 Special Pizza Deals</h1>
+        <p class="hero-subtitle">Limited time offers you can't resist</p>
+        <div class="countdown-badge">⏰ Valid Till Tonight!</div>
       </div>
     </section>
 
-    <!-- DEALS -->
-    <section class="py-5">
+    <!-- SORT OPTIONS -->
+    <section class="py-4 filter-section">
       <div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Deals</button>
+          <button class="filter-btn" data-filter="pizza">🍕 Pizzas</button>
+          <button class="filter-btn" data-filter="combo">🎁 Combos</button>
+          <button class="filter-btn" data-filter="other">🍝 Other Items</button>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURED DEALS -->
+    <section class="py-5 featured-deals">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">⭐ Best Sellers This Week</h2>
         <div class="row g-4">
 
-          <!-- Deal 1 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100 text-center">
-              <h3>Family Combo</h3>
-              <p>2 Large Pizzas + Garlic Bread</p>
-              <span class="price">Rs. 2499</span>
+          <!-- PIZZAS -->
+          <!-- Deal 1 - Pizza -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="pizza">
+            <div class="deal-card glass-card">
+              <div class="deal-badge">⚡ HOT DEAL</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Buy 1 Get 1</h3>
+                <p class="deal-desc">Medium Pizza on Every Purchase</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Any Flavor Allowed</span>
+                  <span class="highlight">✅ Today Only</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 1999</span>
+                  <span class="deal-price">Rs. 1599</span>
+                  <span class="discount">-50%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
             </div>
           </div>
 
-          <!-- Deal 2 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100 text-center">
-              <h3>Buy 1 Get 1</h3>
-              <p>Medium Pizza (Any Flavor)</p>
-              <span class="price">Rs. 1599</span>
+          <!-- Deal 2 - Pizza -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="pizza">
+            <div class="deal-card glass-card">
+              <div class="deal-badge">🌟 SPECIAL</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Margherita Magic</h3>
+                <p class="deal-desc">Fresh Tomato, Mozzarella & Basil</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Authentic Italian</span>
+                  <span class="highlight">✅ Vegetarian Delight</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 1599</span>
+                  <span class="deal-price">Rs. 1299</span>
+                  <span class="discount">-19%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
             </div>
           </div>
 
-          <!-- Deal 3 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100 text-center">
-              <h3>Pasta Special</h3>
-              <p>Creamy Alfredo + Drink</p>
-              <span class="price">Rs. 999</span>
+          <!-- COMBOS -->
+          <!-- Deal 3 - Combo -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="combo">
+            <div class="deal-card glass-card featured-deal">
+              <div class="deal-badge">🏆 BESTSELLER</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Family Combo</h3>
+                <p class="deal-desc">2 Large Pizzas + Garlic Bread + 2 Drinks</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Save Rs. 600</span>
+                  <span class="highlight">✅ Serves 4-5 People</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 3099</span>
+                  <span class="deal-price">Rs. 2499</span>
+                  <span class="discount">-20%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal 4 - Combo -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="combo">
+            <div class="deal-card glass-card">
+              <div class="deal-badge">💑 COUPLE</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Love Combo</h3>
+                <p class="deal-desc">2 Medium Pizzas + Dessert + Drinks</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Perfect for Two</span>
+                  <span class="highlight">✅ Romantic Choice</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 2299</span>
+                  <span class="deal-price">Rs. 1799</span>
+                  <span class="discount">-22%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- OTHER ITEMS -->
+          <!-- Deal 5 - Other -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="other">
+            <div class="deal-card glass-card">
+              <div class="deal-badge">✨ NEW</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Pasta Paradise</h3>
+                <p class="deal-desc">Creamy Alfredo + Garlic Bread + Drink</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Chef's Special</span>
+                  <span class="highlight">✅ Limited Quantity</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 1299</span>
+                  <span class="deal-price">Rs. 999</span>
+                  <span class="discount">-23%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal 6 - Other -->
+          <div class="col-lg-6 col-md-6 deal-item" data-filter="other">
+            <div class="deal-card glass-card">
+              <div class="deal-badge">🍗 CRISPY</div>
+              <div class="deal-content p-5">
+                <h3 class="deal-title">Wings & Things</h3>
+                <p class="deal-desc">6 Crispy Spicy Wings + Fries</p>
+                <div class="deal-highlights">
+                  <span class="highlight">✅ Golden Crispy</span>
+                  <span class="highlight">✅ Non-Veg Lover's Pick</span>
+                </div>
+                <div class="price-section">
+                  <span class="original-price">Rs. 899</span>
+                  <span class="deal-price">Rs. 699</span>
+                  <span class="discount">-22%</span>
+                </div>
+                <button class="btn btn-danger w-100 mt-3">Order Now</button>
+              </div>
             </div>
           </div>
 
@@ -79,19 +203,200 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="text-center py-5">
+    <!-- MORE DEALS -->
+    <section class="py-5 more-deals-section">
       <div class="container">
-        <h2>🍕 Hungry? Order Now!</h2>
-        <a href="contact.html" class="btn btn-danger mt-3">Call to Order</a>
+        <h2 class="section-title text-center mb-5">🎉 More Amazing Offers</h2>
+        <div class="row g-4">
+
+          <!-- Deal 4 -->
+          <div class="col-lg-6 deal-item" data-filter="pizza">
+            <div class="deal-card-horizontal glass-card p-4">
+              <div class="deal-icon">🍕</div>
+              <div class="deal-info">
+                <h4>Cheese Burst Special</h4>
+                <p>Extra melted mozzarella at edges</p>
+                <p class="deal-highlights-mini">✅ Served Hot | ✅ Fresh Ingredients</p>
+              </div>
+              <div class="deal-action">
+                <span class="deal-price-lg">Rs. 899</span>
+                <button class="btn btn-sm btn-danger">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal 5 -->
+          <div class="col-lg-6 deal-item" data-filter="combo">
+            <div class="deal-card-horizontal glass-card p-4">
+              <div class="deal-icon">🎁</div>
+              <div class="deal-info">
+                <h4>Student Combo</h4>
+                <p>1 Pizza + Fries + Soft Drink</p>
+                <p class="deal-highlights-mini">✅ Budget Friendly | ✅ Quick Service</p>
+              </div>
+              <div class="deal-action">
+                <span class="deal-price-lg">Rs. 799</span>
+                <button class="btn btn-sm btn-danger">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal 6 -->
+          <div class="col-lg-6 deal-item" data-filter="other">
+            <div class="deal-card-horizontal glass-card p-4">
+              <div class="deal-icon">🍝</div>
+              <div class="deal-info">
+                <h4>Spicy Arrabbiata</h4>
+                <p>Tomato Based with Red Chili</p>
+                <p class="deal-highlights-mini">✅ Authentic Recipe | ✅ Gluten Free</p>
+              </div>
+              <div class="deal-action">
+                <span class="deal-price-lg">Rs. 599</span>
+                <button class="btn btn-sm btn-danger">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal 7 -->
+          <div class="col-lg-6 deal-item" data-filter="pizza">
+            <div class="deal-card-horizontal glass-card p-4">
+              <div class="deal-icon">🌶️</div>
+              <div class="deal-info">
+                <h4>Fire Dragon Pizza</h4>
+                <p>Spicy Chicken with Jalapeños</p>
+                <p class="deal-highlights-mini">✅ Hot & Spicy | ✅ Real Chicken</p>
+              </div>
+              <div class="deal-action">
+                <span class="deal-price-lg">Rs. 1099</span>
+                <button class="btn btn-sm btn-danger">Add</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY THESE DEALS ARE SPECIAL -->
+    <section class="py-5 why-special-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">💎 Why Our Deals Are Special</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="special-point glass-card p-4 text-center">
+              <div class="point-icon">⚡</div>
+              <h5>Lightning Fast</h5>
+              <p>Get your order in 30 mins or less</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="special-point glass-card p-4 text-center">
+              <div class="point-icon">💰</div>
+              <h5>Best Prices</h5>
+              <p>Unbeatable discounts every day</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="special-point glass-card p-4 text-center">
+              <div class="point-icon">🏆</div>
+              <h5>Premium Quality</h5>
+              <p>Never compromise on taste</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="special-point glass-card p-4 text-center">
+              <div class="point-icon">🎁</div>
+              <h5>Extra Value</h5>
+              <p>Free surprises with every order</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-5 cta-deals-section text-center">
+      <div class="container">
+        <h2 class="cta-title">🍕 Don't Miss Out!</h2>
+        <p class="cta-subtitle">Order Now & Get These Amazing Deals</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-danger btn-lg">📞 Call to Order</a>
+          <a href="#" class="btn btn-outline-danger btn-lg ms-3">💬 WhatsApp Order</a>
+        </div>
       </div>
     </section>
 
   </div>
 
   <!-- FOOTER -->
-  <footer class="text-center py-4 text-light">
-    © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
+  <footer class="site-footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <!-- About Section -->
+        <div class="col-md-3">
+          <h5 class="footer-title">About Us</h5>
+          <p class="footer-text">
+            Serving delicious pizzas since 1960. Premium quality, authentic recipes, and love in every bite.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="special.html">Special Deals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Contact Info</h5>
+          <ul class="footer-links">
+            <li>📍 Worldwide - 1000+ Locations</li>
+            <li>📞 +92 300 1234567</li>
+            <li>✉️ contact@shalepizza.com</li>
+            <li>🕐 Mon-Sun: 10AM - 11PM</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="social-links">
+            <a href="#" class="social-icon" title="Facebook">📘</a>
+            <a href="#" class="social-icon" title="Instagram">📷</a>
+            <a href="#" class="social-icon" title="Twitter">𝕏</a>
+            <a href="#" class="social-icon" title="WhatsApp">💬</a>
+          </div>
+          <div class="mt-4">
+            <h6>Newsletter</h6>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Bottom Section -->
+      <div class="row align-items-center pt-3">
+        <div class="col-md-6">
+          <p class="footer-copy">© 1960–2026 Shale-PIZZAAsss. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="footer-copy">
+            <a href="#" class="footer-link-small">Privacy Policy</a> | 
+            <a href="#" class="footer-link-small">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
@@ -103,16 +408,14 @@
   
   <!--JQuery-->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  
-  <!--Costum Js-->
+    <!--Sweet Alert Library-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Costum Js-->
   <script src="../js/special.js"></script>
-
+  <!--Footer Js-->
+  <script src="../js/footer.js"></script>
   <!--Barba Js file-->
   <script src="../js/barba-init.js"></script>
-
-  
-
-
 
 </body>
 </html>

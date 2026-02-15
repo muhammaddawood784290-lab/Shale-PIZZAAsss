@@ -13,7 +13,15 @@
 </head>
 
 <body data-barba="wrapper">
-
+  
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div class="page-transition-overlay">
+    <div class="transition-modal">
+      <h1 class="page-name">About</h1>
+      <p class="page-loading">Loading...</p>
+    </div>
+  </div>
+  
   <!-- NAVBAR -->
   <nav class="glass-nav fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
@@ -36,37 +44,75 @@
   <div data-barba="container" data-barba-namespace="about">
 
     <!-- HERO -->
-    <div class="glass-card p-4 h-100 about-card">
-      <div class="container">
-        <h1 class="about-title">Our Story</h1>
-        <p class="about-subtitle">Serving legendary pizza since 1960 🍕</p>
+    <div class="glass-card p-5 h-100 about-card hero-about">
+      <div class="container text-center">
+        <h1 class="about-title display-3">Our Story</h1>
+        <p class="about-subtitle lead">Serving legendary pizza since 1960 🍕</p>
       </div>
     </div>
 
+    <!-- STATS SECTION -->
+    <section class="py-5 stats-section">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-md-3">
+            <div class="stat-card glass-card p-4 about-card">
+              <h2 class="stat-number">1000+</h2>
+              <p class="stat-label">Outlets Worldwide</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card glass-card p-4 about-card">
+              <h2 class="stat-number">66</h2>
+              <p class="stat-label">Years of Excellence</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card glass-card p-4 about-card">
+              <h2 class="stat-number">50M+</h2>
+              <p class="stat-label">Customers Served</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card glass-card p-4 about-card">
+              <h2 class="stat-number">🥇</h2>
+              <p class="stat-label">Award Winner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTENT -->
-    <section class="py-5">
+    <section class="py-5 content-section">
       <div class="container">
         <div class="row g-4">
 
           <div class="col-md-6">
-            <div class="glass-card about-card p-4 h-100">
-              <h2>Who We Are</h2>
+            <div class="glass-card about-card p-5 h-100">
+              <h2>👥 Who We Are</h2>
               <p>
                 Shale-PIZZAAsss started with a single restaurant in 1960 and today
                 proudly serves customers through 1000+ outlets worldwide.
                 Our mission is simple: quality food, unforgettable taste.
               </p>
+              <p class="mt-3">
+                We believe in using only the finest ingredients and traditional recipes
+                passed down through generations. Every pizza is crafted with passion and dedication.
+              </p>
             </div>
           </div>
 
           <div class="col-md-6">
-            <div class="glass-card about-card p-4 h-100">
-              <h2>Why Choose Us</h2>
-              <ul>
-                <li>🍕 Premium ingredients</li>
-                <li>🔥 Authentic recipes</li>
-                <li>🌍 Global franchises</li>
-                <li>❤️ Loved by millions</li>
+            <div class="glass-card about-card p-5 h-100">
+              <h2>⭐ Why Choose Us</h2>
+              <ul class="features-list">
+                <li>✅ Premium Fresh Ingredients</li>
+                <li>✅ Authentic Heritage Recipes</li>
+                <li>✅ Global Network of Outlets</li>
+                <li>✅ Loved by Millions Worldwide</li>
+                <li>✅ 24/7 Customer Support</li>
+                <li>✅ Fast & Reliable Delivery</li>
               </ul>
             </div>
           </div>
@@ -75,11 +121,146 @@
       </div>
     </section>
 
+    <!-- VALUES SECTION -->
+    <section class="py-5 values-section">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">Our Core Values</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="value-card glass-card p-4 about-card">
+              <h3 class="value-icon">🎯</h3>
+              <h4>Quality</h4>
+              <p>We never compromise on ingredient quality or preparation standards.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card glass-card p-4 about-card">
+              <h3 class="value-icon">❤️</h3>
+              <h4>Passion</h4>
+              <p>Every pizza is made with love and dedication to customer satisfaction.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card glass-card p-4 about-card">
+              <h3 class="value-icon">🌍</h3>
+              <h4>Community</h4>
+              <p>We're committed to serving communities and supporting local causes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="py-5 timeline-section">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item left about-card">
+            <div class="timeline-content glass-card p-4">
+              <h3>1960</h3>
+              <p>🍕 First Pizzeria Opened in Italy</p>
+            </div>
+          </div>
+          <div class="timeline-item right about-card">
+            <div class="timeline-content glass-card p-4">
+              <h3>1985</h3>
+              <p>🌍 Expanded to Asia & Europe</p>
+            </div>
+          </div>
+          <div class="timeline-item left about-card">
+            <div class="timeline-content glass-card p-4">
+              <h3>2000</h3>
+              <p>🎉 Reached 500 Outlets Milestone</p>
+            </div>
+          </div>
+          <div class="timeline-item right about-card">
+            <div class="timeline-content glass-card p-4">
+              <h3>2020</h3>
+              <p>🚀 1000+ Outlets Worldwide</p>
+            </div>
+          </div>
+          <div class="timeline-item left about-card">
+            <div class="timeline-content glass-card p-4">
+              <h3>2026</h3>
+              <p>🌟 Today: Global Pizza Leader</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <!-- FOOTER -->
-  <footer class="text-center py-4 text-light">
-    © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
+  <footer class="site-footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <!-- About Section -->
+        <div class="col-md-3">
+          <h5 class="footer-title">About Us</h5>
+          <p class="footer-text">
+            Serving delicious pizzas since 1960. Premium quality, authentic recipes, and love in every bite.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="special.html">Special Deals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Contact Info</h5>
+          <ul class="footer-links">
+            <li>📍 Worldwide - 1000+ Locations</li>
+            <li>📞 +92 300 1234567</li>
+            <li>✉️ contact@shalepizza.com</li>
+            <li>🕐 Mon-Sun: 10AM - 11PM</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="social-links">
+            <a href="#" class="social-icon" title="Facebook">📘</a>
+            <a href="#" class="social-icon" title="Instagram">📷</a>
+            <a href="#" class="social-icon" title="Twitter">𝕏</a>
+            <a href="#" class="social-icon" title="WhatsApp">💬</a>
+          </div>
+          <div class="mt-4">
+            <h6>Newsletter</h6>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Bottom Section -->
+      <div class="row align-items-center pt-3">
+        <div class="col-md-6">
+          <p class="footer-copy">© 1960–2026 Shale-PIZZAAsss. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="footer-copy">
+            <a href="#" class="footer-link-small">Privacy Policy</a> | 
+            <a href="#" class="footer-link-small">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
@@ -92,8 +273,14 @@
   <!--JQuery-->  
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   
+  <!--Sweet Alert Library-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <!--Costume Js-->
   <script src="../js/about.js"></script>
+  
+  <!--Footer Js-->
+  <script src="../js/footer.js"></script>
   
   <!--Barba Js file-->
   <script src="../js/barba-init.js"></script>

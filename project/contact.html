@@ -13,6 +13,14 @@
 
  <!--Barba JS-->
 <body data-barba="wrapper">
+  
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div class="page-transition-overlay">
+    <div class="transition-modal">
+      <h1 class="page-name">Contact</h1>
+      <p class="page-loading">Loading...</p>
+    </div>
+  </div>
 
   <!-- NAVBAR (SAME EVERYWHERE) -->
   <nav class="glass-nav fixed-top">
@@ -39,43 +47,145 @@
 
   <!-- HERO -->
   <section class="contact-hero text-center py-5">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you 🍕</p>
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Get In Touch</h1>
+      <p class="hero-subtitle">We're always here to serve you 🍕</p>
+      <p class="hero-desc">Have questions? Need to order? We'd love to hear from you!</p>
     </div>
   </section>
 
-  <!-- CONTACT MAIN SECTION -->
-  <section class="contact-section py-5">
+  <!-- QUICK CONTACT METHODS -->
+  <section class="quick-contact py-5">
     <div class="container">
       <div class="row g-4">
+        <!-- Phone -->
+        <div class="col-md-4">
+          <div class="contact-method glass-card p-4 text-center">
+            <div class="method-icon">📞</div>
+            <h4>Call Us</h4>
+            <p class="method-text">+92 300 1234567</p>
+            <p class="method-desc">Available Mon-Sun 10AM-11PM</p>
+            <a href="tel:+923001234567" class="btn btn-danger btn-sm">Call Now</a>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="col-md-4">
+          <div class="contact-method glass-card p-4 text-center">
+            <div class="method-icon">💬</div>
+            <h4>WhatsApp</h4>
+            <p class="method-text">+92 300 1234567</p>
+            <p class="method-desc">Quick replies & instant support</p>
+            <a href="https://wa.me/923001234567" target="_blank" class="btn btn-success btn-sm">Chat Now</a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-4">
+          <div class="contact-method glass-card p-4 text-center">
+            <div class="method-icon">✉️</div>
+            <h4>Email</h4>
+            <p class="method-text">contact@shalepizza.com</p>
+            <p class="method-desc">Response within 24 hours</p>
+            <a href="mailto:contact@shalepizza.com" class="btn btn-info btn-sm">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="contact-section py-5">
+    <div class="container">
+      <div class="row g-5">
 
         <!-- FORM COLUMN -->
         <div class="col-lg-7">
-          <div class="contact-form-box p-4">
+          <div class="contact-form-title">
+            <h2>Send Us A Message</h2>
+            <p>Fill out the form below and we'll get back to you ASAP</p>
+          </div>
+          <div class="contact-form-box glass-card p-5">
             <form id="contactForm">
-              <input type="text" id="name" class="form-control mb-3" placeholder="Your Name" autocomplete="off"/>
-              <input type="email" id="email" class="form-control mb-3" placeholder="Email Address" autocomplete="off"/>
-              <textarea id="message" class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+              <div class="form-group mb-4">
+                <input type="text" id="name" class="form-control input-custom" placeholder="Your Name" autocomplete="off" required/>
+              </div>
+              <div class="form-group mb-4">
+                <input type="email" id="email" class="form-control input-custom" placeholder="Email Address" autocomplete="off" required/>
+              </div>
+              <div class="form-group mb-4">
+                <input type="tel" id="phone" class="form-control input-custom" placeholder="Phone Number (Optional)" autocomplete="off"/>
+              </div>
+              <div class="form-group mb-4">
+                <select id="subject" class="form-control input-custom" required>
+                  <option value="">Select Subject</option>
+                  <option value="order">Place An Order</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="franchise">Franchise Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group mb-4">
+                <textarea id="message" class="form-control input-custom" rows="5" placeholder="Your Message" required></textarea>
+              </div>
 
-              <button type="submit" class="btn btn-warning w-100">
-                Send Message
+              <button type="submit" class="btn btn-danger btn-lg w-100">
+                📤 Send Message
               </button>
             </form>
           </div>
         </div>
 
-        <!-- CONTACT INFO COLUMN -->
+        <!-- INFO COLUMN -->
         <div class="col-lg-5">
-          <div class="glass-card p-4 h-100">
-            <h3>Get in touch</h3>
-            <p>📍 Worldwide – 1000+ Locations</p>
-            <p>📞 +92 300 1234567</p>
-            <p>✉️ contact@shalepizza.com</p>
+          <!-- Opening Hours -->
+          <div class="info-box glass-card p-4 mb-4">
+            <h4 class="info-title">🕐 Opening Hours</h4>
+            <div class="hours-list">
+              <div class="hour-item">
+                <span>Monday - Friday</span>
+                <span class="time">10:00 AM - 11:00 PM</span>
+              </div>
+              <div class="hour-item">
+                <span>Saturday</span>
+                <span class="time">9:00 AM - 12:00 AM</span>
+              </div>
+              <div class="hour-item">
+                <span>Sunday</span>
+                <span class="time">10:00 AM - 11:00 PM</span>
+              </div>
+              <div class="hour-item">
+                <span>Holidays</span>
+                <span class="time">11:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+          </div>
 
-            <a href="tel:+923001234567" class="btn btn-danger w-100 mt-3">
-              📞 Call to Order
-            </a>
+          <!-- Locations -->
+          <div class="info-box glass-card p-4 mb-4">
+            <h4 class="info-title">📍 Our Locations</h4>
+            <p class="info-text">
+              With over <strong>1000+ outlets</strong> worldwide, we're always near you!
+            </p>
+            <ul class="location-list">
+              <li>🇵🇰 Pakistan (50+ branches)</li>
+              <li>🌍 Middle East (200+ outlets)</li>
+              <li>🌏 Asia-Pacific (300+ locations)</li>
+              <li>🌎 USA & UK (450+ restaurants)</li>
+            </ul>
+          </div>
+
+          <!-- Service Promise -->
+          <div class="service-promise glass-card p-4">
+            <h4 class="info-title">✨ Our Promise</h4>
+            <ul class="promise-list">
+              <li>⚡ <strong>30 min delivery</strong> or free pizza</li>
+              <li>❄️ <strong>Hot & Fresh</strong> guaranteed</li>
+              <li>💯 <strong>100% satisfaction</strong> or refund</li>
+              <li>🎁 <strong>Loyalty rewards</strong> on every order</li>
+            </ul>
           </div>
         </div>
 
@@ -83,12 +193,125 @@
     </div>
   </section>
 
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Why Choose Shale-PIZZAAsss?</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="feature-card glass-card p-4 text-center">
+            <div class="feature-icon">🍕</div>
+            <h5>Premium Quality</h5>
+            <p>Authentic recipes with the finest ingredients</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-card glass-card p-4 text-center">
+            <div class="feature-icon">🚀</div>
+            <h5>Super Fast</h5>
+            <p>Quick service without compromising taste</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-card glass-card p-4 text-center">
+            <div class="feature-icon">💰</div>
+            <h5>Best Prices</h5>
+            <p>Amazing deals and unbeatable offers daily</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-card glass-card p-4 text-center">
+            <div class="feature-icon">😊</div>
+            <h5>Great Service</h5>
+            <p>Customer satisfaction is our priority</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta text-center py-5">
+    <div class="container">
+      <h2>🍕 Ready To Order?</h2>
+      <p>Choose your favorite pizza now!</p>
+      <a href="special.html" class="btn btn-danger btn-lg mt-3">View Deals & Specials</a>
+      <a href="tel:+923001234567" class="btn btn-outline-danger btn-lg mt-3 ms-3">Call To Order</a>
+    </div>
+  </section>
+
 </div>
 
 
-  <!-- ===== Footer ===== -->
-  <footer class="text-center py-4 text-light">
-  © 1960–2026 Shale-PIZZAAsss. All Rights Reserved.
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <!-- About Section -->
+        <div class="col-md-3">
+          <h5 class="footer-title">About Us</h5>
+          <p class="footer-text">
+            Serving delicious pizzas since 1960. Premium quality, authentic recipes, and love in every bite.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="special.html">Special Deals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Contact Info</h5>
+          <ul class="footer-links">
+            <li>📍 Worldwide - 1000+ Locations</li>
+            <li>📞 +92 300 1234567</li>
+            <li>✉️ contact@shalepizza.com</li>
+            <li>🕐 Mon-Sun: 10AM - 11PM</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="social-links">
+            <a href="#" class="social-icon" title="Facebook">📘</a>
+            <a href="#" class="social-icon" title="Instagram">📷</a>
+            <a href="#" class="social-icon" title="Twitter">𝕏</a>
+            <a href="#" class="social-icon" title="WhatsApp">💬</a>
+          </div>
+          <div class="mt-4">
+            <h6>Newsletter</h6>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Bottom Section -->
+      <div class="row align-items-center pt-3">
+        <div class="col-md-6">
+          <p class="footer-copy">© 1960–2026 Shale-PIZZAAsss. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="footer-copy">
+            <a href="#" class="footer-link-small">Privacy Policy</a> | 
+            <a href="#" class="footer-link-small">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!--Barba.js-->
@@ -105,6 +328,9 @@
 
   <!-- Custom JS -->
   <script src="../js/contact.js"></script>
+
+  <!--Footer Js-->
+  <script src="../js/footer.js"></script>
 
   <!--Barba Transition Js-->
   <script src="../js/barba-init.js"></script>

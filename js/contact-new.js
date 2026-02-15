@@ -122,7 +122,7 @@ $(document).on("input", "#name", function () {
   }
 });
 
-
+// Form validation and submission
 $(document).on("submit", "#contactForm", function (e) {
   e.preventDefault();
 

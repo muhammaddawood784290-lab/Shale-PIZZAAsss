@@ -6,9 +6,39 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Page name mapping
+  const pageNames = {
+    "home": "Home",
+    "about": "About",
+    "special": "Special",
+    "contact": "Contact"
+  };
+
+  // Show page transition overlay
+  function showPageOverlay(namespace) {
+    const overlay = document.querySelector(".page-transition-overlay");
+    const pageName = document.querySelector(".page-name");
+    
+    if (overlay && pageName) {
+      pageName.textContent = pageNames[namespace] || "Loading";
+      overlay.classList.add("active");
+    }
+  }
+
+  // Hide page transition overlay
+  function hidePageOverlay() {
+    const overlay = document.querySelector(".page-transition-overlay");
+    if (overlay) {
+      overlay.classList.remove("active");
+    }
+  }
+
  barba.init({
   transitions: [{
     async leave(data) {
+      // Show overlay before fading out
+      showPageOverlay(data.next.namespace);
+      
       await gsap.to(data.current.container, {
         opacity: 0,
         duration: 0.4
@@ -16,6 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     async enter(data) {
+      // Wait a bit before hiding overlay
+      await gsap.delayedCall(0.6, () => {
+        hidePageOverlay();
+      });
+
       gsap.from(data.next.container, {
         opacity: 0,
         duration: 0.4
