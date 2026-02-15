@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Shale PIZZA Restaurant</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+        <!-- PAGE TRANSITION OVERLAY -->
+        <div class="page-transition-overlay">
+            <div class="transition-modal">
+                <h1 class="page-name">Menu</h1>
+                <p class="page-loading">Loading...</p>
+            </div>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="glass-nav fixed-top">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a href="index.html" class="logo">
+                    <img src="../Assets/Shalezz Pizza logo.jpg">
+                    <span>Shale-<strong>PIZZAAsss</strong></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="active" href="menu.html">Menu</a></li>
+                    <li><a href="special.html">Special</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div data-barba="container" data-barba-namespace="menu">
+            <!-- HERO -->
+            <section class="menu-hero text-center py-5">
+                <div class="overlay"></div>
+                <div class="container hero-content">
+                    <h1 class="hero-title">🍕 Shale PIZZA Menu</h1>
+                    <p class="hero-subtitle">Discover our delicious pizzas and more!</p>
+                </div>
+            </section>
+
+            <!-- MENU LIST -->
+            <section class="py-5 menu-list-section">
+                <div class="container">
+                    <div class="row justify-content-center g-4 menu-list">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-item glass-card p-4 d-flex align-items-center gap-3">
+                                <span class="item-icon fs-2">🍕</span>
+                                <div class="item-details flex-grow-1">
+                                    <span class="item-name d-block fw-bold">Margherita Pizza</span>
+                                    <span class="item-price badge bg-danger fs-6">$8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-item glass-card p-4 d-flex align-items-center gap-3">
+                                <span class="item-icon fs-2">🌶️</span>
+                                <div class="item-details flex-grow-1">
+                                    <span class="item-name d-block fw-bold">Pepperoni Pizza</span>
+                                    <span class="item-price badge bg-danger fs-6">$10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-item glass-card p-4 d-flex align-items-center gap-3">
+                                <span class="item-icon fs-2">🥦</span>
+                                <div class="item-details flex-grow-1">
+                                    <span class="item-name d-block fw-bold">Veggie Pizza</span>
+                                    <span class="item-price badge bg-danger fs-6">$9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-item glass-card p-4 d-flex align-items-center gap-3">
+                                <span class="item-icon fs-2">🍗</span>
+                                <div class="item-details flex-grow-1">
+                                    <span class="item-name d-block fw-bold">BBQ Chicken Pizza</span>
+                                    <span class="item-price badge bg-danger fs-6">$11</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="download-pdf" class="btn btn-danger mt-4">Download Menu as PDF</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="../js/menu.js"></script>
+</body>
+</html>

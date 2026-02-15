@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         aboutAnimation();
       }
 
+      if (data.next.namespace === "menu") {
+        menuAnimation();
+      }
+      
       // Special page animation call
       if (data.next.namespace === "special") {
         specialAnimation();
