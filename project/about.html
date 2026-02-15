@@ -10,11 +10,6 @@
   <!-- About CSS -->
   <link rel="stylesheet" href="../css/about.css">
 
-  <style>
-    body {
-      padding-top: 90px; /* FIX for fixed navbar */
-    }
-  </style>
 </head>
 
 <body data-barba="wrapper">
@@ -41,12 +36,12 @@
   <div data-barba="container" data-barba-namespace="about">
 
     <!-- HERO -->
-    <section class="about-hero text-center py-5">
+    <div class="glass-card p-4 h-100 about-card">
       <div class="container">
-        <h1>Our Story</h1>
-        <p>Serving legendary pizza since 1960 🍕</p>
+        <h1 class="about-title">Our Story</h1>
+        <p class="about-subtitle">Serving legendary pizza since 1960 🍕</p>
       </div>
-    </section>
+    </div>
 
     <!-- CONTENT -->
     <section class="py-5">
@@ -54,7 +49,7 @@
         <div class="row g-4">
 
           <div class="col-md-6">
-            <div class="glass-card p-4 h-100">
+            <div class="glass-card about-card p-4 h-100">
               <h2>Who We Are</h2>
               <p>
                 Shale-PIZZAAsss started with a single restaurant in 1960 and today
@@ -65,7 +60,7 @@
           </div>
 
           <div class="col-md-6">
-            <div class="glass-card p-4 h-100">
+            <div class="glass-card about-card p-4 h-100">
               <h2>Why Choose Us</h2>
               <ul>
                 <li>🍕 Premium ingredients</li>
@@ -88,10 +83,19 @@
   </footer>
 
   <!-- Scripts -->
+  <!--Barba.js-->   
   <script src="https://unpkg.com/@barba/core"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!--GSAP-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <!--JQuery-->  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!--Costume Js-->
   <script src="../js/about.js"></script>
+  
+  <!--Barba Js file-->
   <script src="../js/barba-init.js"></script>
 
 </body>

@@ -1,11 +1,19 @@
-console.log("Contact page loaded ✅");
+function contactAnimation() {
 
+  // Page animation
+  gsap.from(".contact-form-box, .glass-card", {
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power3.out"
+  });
 
-// Name field validation
-$("#name").on("input", function () {
+}
+
+// 👇 IMPORTANT — Event delegation (works even after Barba reload)
+$(document).on("input", "#name", function () {
   let value = $(this).val();
-
-  // sirf letters + space allow
   let cleanValue = value.replace(/[^a-zA-Z\s]/g, "");
 
   if (value !== cleanValue) {
@@ -14,8 +22,7 @@ $("#name").on("input", function () {
 });
 
 
-// Fake submit (project demo)
-$("#contactForm").on("submit", function (e) {
+$(document).on("submit", "#contactForm", function (e) {
   e.preventDefault();
 
   Swal.fire({
@@ -25,15 +32,6 @@ $("#contactForm").on("submit", function (e) {
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: true,
-
-    // SweetAlert2 built-in animations
-    showClass: {
-      popup: "swal2-show"
-    },
-    hideClass: {
-      popup: "swal2-hide"
-    },
-
     backdrop: "rgba(0,0,0,0.6)"
   });
 

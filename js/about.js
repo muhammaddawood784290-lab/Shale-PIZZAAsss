@@ -1,14 +1,29 @@
-// Smooth scroll reveal (simple)
-$(window).on("scroll", function () {
-  $(".glass-card").each(function () {
-    let cardTop = $(this).offset().top;
-    let windowBottom = $(window).scrollTop() + $(window).height();
+function aboutAnimation() {
 
-    if (windowBottom > cardTop + 100) {
-      $(this).addClass("fade-in");
-    }
+  // Hero animation
+  gsap.from(".about-title", {
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    ease: "power3.out"
   });
-});
 
-// Debug
-console.log("About page JS loaded ✅");
+  gsap.from(".about-subtitle", {
+    opacity: 0,
+    y: 50,
+    delay: 0.2,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+
+  // Cards animation
+  gsap.from(".about-card", {
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    stagger: 0.3,
+    delay: 0.4,
+    ease: "power3.out"
+  });
+
+}
