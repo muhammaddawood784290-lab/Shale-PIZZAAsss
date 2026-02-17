@@ -1,12 +1,22 @@
-/* Container for alignment */
+/* Ensure hero-content is above overlay */
+.hero-content, .menu-hero .container, .menu-list-section .container, .menu-list-section {
+    position: relative;
+    z-index: 5;
+}
+/* =========================
+   Container
+========================= */
 .container {
     max-width: 900px;
     margin: 32px auto;
     padding: 0 24px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
+
+/* =========================
+   Navbar
+========================= */
 .navbar {
     width: 100%;
     background: linear-gradient(90deg, #d35400 0%, #fcb69f 100%);
@@ -22,53 +32,29 @@
     z-index: 10;
     border-radius: 12px 12px 0 0;
     margin-bottom: 24px;
+    flex-wrap: wrap;
 }
-.nav-logo {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 2px;
-    margin-right: 24px;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    /* Menu page specific styles (structure/layout only) */
-    .menu-list {
-      margin-bottom: 2rem;
-    }
-    .menu-item {
-      min-height: 110px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.3);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .menu-item:hover {
-      box-shadow: 0 12px 32px rgba(230, 57, 70, 0.12);
-      transform: translateY(-4px) scale(1.02);
-    }
-    .item-icon {
-      min-width: 48px;
-      text-align: center;
-    }
+
 .nav-logo {
     font-size: 1.6em;
     font-weight: bold;
     color: #fff;
     letter-spacing: 2px;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 24px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
+
 .nav-links li {
     display: inline-block;
 }
+
 .nav-links a {
     text-decoration: none;
     color: #fff;
@@ -78,103 +64,91 @@
     border-radius: 6px;
     transition: background 0.2s, color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active {
+
+.nav-links a:hover,
+.nav-links a.active {
     background: #fff8f0;
     color: #d35400;
 }
-.navbar {
-    width: 100%;
-    background: linear-gradient(90deg, #d35400 0%, #fcb69f 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 48px;
-    padding: 0 32px;
-    height: 60px;
-    box-shadow: 0 2px 8px rgba(211,84,0,0.08);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-radius: 12px 12px 0 0;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-    overflow-x: auto;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 18px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    max-width: 100vw;
-}
-@media (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 12px 8px;
-        border-radius: 0;
-        gap: 12px;
-    }
-    .nav-logo {
-        margin-bottom: 8px;
-    }
-    .nav-links {
-        gap: 8px;
-        justify-content: center;
-        width: 100%;
-        overflow-x: auto;
-    }
-}
+
+/* =========================
+   Menu Section
+========================= */
+.menu-title {
     text-align: center;
     color: #d35400;
     font-size: 2.4em;
     margin-bottom: 32px;
     letter-spacing: 2px;
 }
+
 .menu-list {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
+
 .menu-item {
     display: flex;
     align-items: center;
     background: #fff8f0;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(211,84,0,0.08);
     padding: 18px 24px;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
+
 .menu-item:hover {
-    box-shadow: 0 6px 16px rgba(211,84,0,0.18);
-    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(211,84,0,0.18);
+    transform: translateY(-4px);
 }
+
 .item-icon {
     font-size: 2em;
     margin-right: 18px;
 }
+
 .item-details {
     flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .item-name {
     font-weight: 600;
     font-size: 1.2em;
     color: #d35400;
 }
+
 .item-price {
     font-size: 1.1em;
     color: #333;
     background: #ffe5d0;
-    padding: 4px 16px;
-    border-radius: 16px;
+    padding: 6px 18px;
+    border-radius: 20px;
     font-weight: 500;
 }
+.menu-hero {
+    position: relative;
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3); /* semi-transparent */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =========================
+   Download Button
+========================= */
 #download-pdf {
     display: block;
     margin: 36px auto 0 auto;
@@ -187,9 +161,40 @@
     cursor: pointer;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(211,84,0,0.12);
-    transition: background 0.2s, transform 0.2s;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
 #download-pdf:hover {
-    background: linear-gradient(90deg, #b34700 0%, #ffecd2 100%);
     transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 8px;
+        border-radius: 0;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 8px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .item-details {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
