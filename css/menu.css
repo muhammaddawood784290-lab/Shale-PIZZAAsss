@@ -19,33 +19,108 @@ body {
   transform: translateY(-100%);
 }
 
+/* NAVBAR */
+.glass-nav {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo strong {
+  color: #E63946;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #E63946;
+}
+
 /* =============================
    HERO SECTION
 ============================= */
 
-/* ===== MENU HERO FIX ===== */
 .menu-hero {
-  position: relative;           /* ensures overlay and content stay inside */
-  height: 80vh;                 /* fix height, adjust as needed */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../images/menu-hero.jpg') center/cover no-repeat; /* optional background */
-  overflow: hidden;             /* prevent children from overflowing */
 }
 
-.menu-hero .overlay-dark {
+.menu-hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5); /* dark overlay */
+  background: radial-gradient(circle at 30% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 50%);
   z-index: 1;
 }
 
 .menu-hero .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.menu-hero .hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
   color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 6px 30px rgba(230, 57, 70, 0.5);
+  letter-spacing: -1px;
+}
+
+.menu-hero .hero-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.countdown-badge {
+  display: inline-block;
+  background: rgba(230, 57, 70, 0.8);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: pulse-text 2s infinite;
 }
 
 /* Optional: logo inside navbar fix */
@@ -56,40 +131,43 @@ body {
   border-radius: 50%;
 }
 
-
-
 /* =============================
    FILTER SECTION
 ============================= */
 
 .filter-section {
-  background: #111;
+  background: rgba(26, 26, 46, 0.5);
+  border-bottom: 3px solid #E63946;
 }
 
 .filter-buttons {
   display: flex;
-  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter-btn {
-  padding: 8px 20px;
-  border-radius: 30px;
-  border: 1px solid #444;
+  padding: 10px 25px;
+  border: 2px solid rgba(230, 57, 70, 0.5);
   background: transparent;
   color: #fff;
-  transition: 0.3s ease;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #ffb703;
-  color: #000;
-  border-color: #ffb703;
+  background: #E63946;
+  border-color: #E63946;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
 }
-
 
 /* =============================
    MENU CARDS
@@ -135,33 +213,79 @@ body {
   box-shadow: 0 15px 40px rgba(255, 183, 3, 0.3);
 }
 
-
-
 /* =============================
    HORIZONTAL CARD
 ============================= */
 
-.menu-card-horizontal {
+.deal-card-horizontal {
+  background: rgba(30, 39, 68, 0.6);
+  border: 2px solid rgba(230, 57, 70, 0.2);
+  border-radius: 15px;
   display: flex;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
   overflow: hidden;
-  transition: 0.4s ease;
 }
 
-.menu-card-horizontal img {
-  width: 300px;
+.deal-card-horizontal:hover {
+  border-color: #E63946;
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+}
+
+.deal-card-horizontal img {
+  width: 350px;
+  height: 250px;
   object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;   /* IMPORTANT */
 }
 
-.menu-card-horizontal .content {
+.deal-card-horizontal .content {
   flex: 1;
 }
 
-.menu-card-horizontal:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(255, 183, 3, 0.3);
+.deal-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.deal-info {
+  flex: 1;
+}
+
+.deal-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.deal-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.deal-highlights-mini {
+  color: rgba(76, 175, 80, 0.9) !important;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.deal-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.deal-price-lg {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #E63946;
 }
 
 /* =============================
@@ -209,7 +333,119 @@ body {
   color: #000;
 }
 
+/* FOOTER */
+.site-footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-top: 2px solid #E63946;
+  color: #ddd;
+}
 
+.footer-title {
+  color: #E63946;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  padding: 8px 0;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #E63946;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.newsletter-form input::placeholder {
+  color: #888;
+}
+
+.btn-subscribe {
+  padding: 10px 20px;
+  background: #E63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-subscribe:hover {
+  background: #d62828;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 30px 0;
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0;
+}
+
+.footer-link-small {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link-small:hover {
+  color: #E63946;
+}
 
 /* =============================
    RESPONSIVE
@@ -231,3 +467,39 @@ body {
   }
 
 }
+
+@media (max-width: 768px) {
+  .deal-card-horizontal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .deal-card-horizontal img {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-text {
+  0% {
+    text-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(230, 57, 70, 1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+  }
+}
+
