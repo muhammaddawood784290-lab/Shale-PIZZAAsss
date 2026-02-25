@@ -5,18 +5,49 @@
 body {
   margin: 0;
   padding: 0;
+  padding-top: 90px;
   background: #0f0f0f;
   font-family: 'Poppins', sans-serif;
   color: #fff;
   overflow-x: hidden;
 }
 
-.overlay {
+.page-transition-overlay {
   position: fixed;
   inset: 0;
-  background: #000;
-  z-index: 9999;
-  transform: translateY(-100%);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.transition-modal {
+  background: rgba(230, 57, 70, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 50px 70px;
+  text-align: center;
+}
+
+.page-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-loading {
+  margin-top: 12px;
+  letter-spacing: 1px;
 }
 
 /* NAVBAR */
@@ -74,7 +105,10 @@ body {
 ============================= */
 
 .menu-hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 75vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../Assets/Gemini_Generated_Image_6z1o0w6z1o0w6z1o.png") center/cover no-repeat;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -82,7 +116,7 @@ body {
   justify-content: center;
 }
 
-.menu-hero .overlay {
+.menu-hero .hero-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 30% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 50%);
@@ -453,15 +487,15 @@ body {
 
 @media (max-width: 768px) {
 
-  .hero-title {
+  .menu-hero .hero-title {
     font-size: 2rem;
   }
 
-  .menu-card-horizontal {
+  .deal-card-horizontal {
     flex-direction: column;
   }
 
-  .menu-card-horizontal img {
+  .deal-card-horizontal img {
     width: 100%;
     height: 200px;
   }

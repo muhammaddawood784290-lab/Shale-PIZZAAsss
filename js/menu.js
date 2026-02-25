@@ -3,8 +3,8 @@
 ================================ */
 
 function menuAnimation() {
+  if (typeof gsap === "undefined") return;
 
-  // Hero Animation
   gsap.from(".menu-hero .hero-title", {
     opacity: 0,
     y: 30,
@@ -20,11 +20,6 @@ function menuAnimation() {
     ease: "power3.out"
   });
 
-  // Hero content ready position before animation
-gsap.set(".menu-hero .hero-title, .menu-hero .hero-subtitle", {opacity:0, y:30});
-menuAnimation(); // triggers all animations
-
-  // Filter Buttons
   gsap.from(".filter-btn", {
     opacity: 0,
     y: -20,
@@ -34,7 +29,6 @@ menuAnimation(); // triggers all animations
     ease: "power3.out"
   });
 
-  // Menu Cards
   gsap.from(".menu-card", {
     opacity: 0,
     y: 50,
@@ -44,8 +38,7 @@ menuAnimation(); // triggers all animations
     ease: "power3.out"
   });
 
-  // Horizontal Card
-  gsap.from(".menu-card-horizontal", {
+  gsap.from(".deal-card-horizontal", {
     opacity: 0,
     x: -50,
     duration: 0.8,
@@ -53,7 +46,6 @@ menuAnimation(); // triggers all animations
     ease: "power2.out"
   });
 
-  // CTA Section
   gsap.from(".cta-title", {
     opacity: 0,
     y: 20,
@@ -70,163 +62,61 @@ menuAnimation(); // triggers all animations
     delay: 1.4,
     ease: "back.out(1.7)"
   });
-
 }
 
+function ensureMenuVisible() {
+  $(".menu-item").show();
+  $(".menu-card, .deal-card-horizontal, .filter-btn, .cta-title, .cta-buttons .btn, .menu-hero .hero-title, .menu-hero .hero-subtitle")
+    .css({ opacity: 1, visibility: "visible" });
+}
 
 /* ===============================
    FILTER FUNCTIONALITY
 ================================ */
 
-$(document).on('click', '.filter-btn', function(e) {
+$(document).on("click", ".filter-btn", function (e) {
   e.preventDefault();
 
-  const filterValue = $(this).data('filter');
+  const filterValue = $(this).data("filter");
+  $(".filter-btn").removeClass("active");
+  $(this).addClass("active");
 
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-
-  if (filterValue === 'all') {
-    $('.menu-item').show();
-  } else {
-    $('.menu-item').hide();
-    $('.menu-item[data-filter="' + filterValue + '"]').show();
+  if (filterValue === "all") {
+    $(".menu-item").show();
+    return;
   }
 
+  $(".menu-item").hide();
+  $('.menu-item[data-filter="' + filterValue + '"]').show();
 });
 
 /* ===============================
-   HOVER EFFECT
+   INIT
 ================================ */
 
-$(document).on('mouseenter', '.menu-card, .menu-card-horizontal', function() {
-  gsap.to(this, {
-    duration: 0.3,
-    ease: "power2.out"
-  });
-});
+$(document).ready(function () {
+  ensureMenuVisible();
+  $(".filter-btn").removeClass("active");
+  $('.filter-btn[data-filter="all"]').addClass("active");
 
+  const fallbackCandidates = [
+    "../Assets/Gemini_Generated_Image_6z1o0w6z1o0w6z1o.png",
+    "/Assets/Gemini_Generated_Image_6z1o0w6z1o0w6z1o.png",
+    "Assets/Gemini_Generated_Image_6z1o0w6z1o0w6z1o.png",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='100%25' height='100%25' fill='%23212121'/%3E%3Ctext x='50%25' y='50%25' fill='%23ffffff' font-size='36' text-anchor='middle' dominant-baseline='middle'%3EMenu Image%3C/text%3E%3C/svg%3E"
+  ];
 
-/* ===============================
-   INIT ON LOAD
-================================ */
-
-$(document).ready(function() {
-  menuAnimation();
-});
-
-/* ===============================
-   SPECIAL PAGE ANIMATION
-================================ */ 
-function specialAnimation() {
-    // Hero Animation
-    gsap.from(".special-hero .hero-title", {
-    opacity: 0,
-    y: 30,
-    duration: 0.7,
-    ease: "power3.out"
-  });
-}
-
-gsap.from(".special-hero .hero-subtitle", {
-    opacity: 0,
-    y: 20,
-    duration: 0.7,
-    delay: 0.1,
-    ease: "power3.out"
-  });
-
-    // Special Cards    
-    gsap.from(".special-card", {
-    opacity: 0,
-     y: 50,
-     duration: 0.7, 
-        stagger: 0.12,
-        delay: 0.3,
-    ease: "power3.out"
-  });
-
-    // Horizontal Card
-    gsap.from(".special-card-horizontal", {
-    opacity: 0,
-    x: -50,
-    duration: 0.8,
-    delay: 1,
-    ease: "power2.out"
-  });
-
-    // Countdown Badge
-    gsap.from(".countdown-badge", {
-    opacity: 0,
-    scale: 0.5,
-    duration: 0.6,
-    delay: 0.2,
-    ease: "back.out(1.7)"
-  });
-
-    // Filter Buttons
-    gsap.from(".filter-btn", {
-    opacity: 0,
-    y: -20,
-    duration: 0.5,
-    stagger: 0.05,
-    delay: 0.3,
-    ease: "power3.out"
-  });
-
-    // Featured Deals Section
-    gsap.from(".section-title", {
-    opacity: 0,
-    y: 20,
-    duration: 0.6,
-    delay: 0.4,
-    ease: "power3.out"
-  });
-
-    // Deal Cards
-    gsap.from(".deal-card", {
-    opacity: 0,
-    y: 30,
-    duration: 0.6,
-    stagger: 0.1,
-    delay: 0.5,
-    ease: "power3.out"
-  });
-
-    // Horizontal Deal Cards
-    gsap.from(".deal-card-horizontal", {
-    opacity: 0,
-    x: -50,
-    duration: 0.7,
-    stagger: 0.1,
-    delay: 1.0,
-    ease: "power2.out"
-  });
-
-/* ===============================
-   BARBA.JS PAGE TRANSITION
-================================ */
-$(document).ready(function() {
-  menuAnimation();
-});
-
-barba.init({
-  transitions: [
-    {
-      name: 'fade',
-      leave(data) {
-        return gsap.to(data.current.container, {
-          opacity: 0,
-          duration: 0.5
-        });
-      },
-      enter(data) {
-        return gsap.from(data.next.container, {
-          opacity: 0,
-          duration: 0.5
-        });
-      }
+  $(".menu-card img, .deal-card-horizontal img").on("error", function () {
+    const nextFallback = fallbackCandidates.find((candidate) => !this.src.includes(candidate));
+    if (nextFallback) {
+      this.src = nextFallback;
     }
-  ]
+  });
+
+  menuAnimation();
+  setTimeout(ensureMenuVisible, 900);
 });
 
+$(window).on("load", function () {
+  ensureMenuVisible();
+});
