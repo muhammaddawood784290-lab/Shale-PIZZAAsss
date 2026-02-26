@@ -411,18 +411,31 @@ body {
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .social-icon {
-  font-size: 1.8rem;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
 .social-icon:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  background: #E63946;
+  border-color: #E63946;
+  color: #fff;
 }
 
 .newsletter-form {
@@ -536,4 +549,6 @@ body {
     text-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
   }
 }
+
+
 
